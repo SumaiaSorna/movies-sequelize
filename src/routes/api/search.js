@@ -4,7 +4,7 @@ const {
   searchMovieByTitle,
 } = require("../../controllers/api/search");
 
-const router = Router;
+const router = Router();
 
 router.get("/:id", getMovieById);
 router.post("/", searchMovieByTitle);

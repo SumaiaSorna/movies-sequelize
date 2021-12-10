@@ -1,13 +1,13 @@
-const getfavourites = (req, res) => {};
+const getFavourites = (req, res) => {};
 const createFavourites = (req, res) => {};
-const updateFavouritesById = (req, res) => {};
+const updateFavourites = (req, res) => {};
 const deleteFavouritesById = (req, res) => {};
 const deleteAllFavourites = (req, res) => {};
 
 module.exports = {
-  getfavourites,
+  getFavourites,
   createFavourites,
-  updateFavouritesById,
+  updateFavourites,
   deleteFavouritesById,
   deleteAllFavourites,
 };

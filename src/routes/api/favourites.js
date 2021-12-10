@@ -1,17 +1,17 @@
 const { Router } = require("express");
 const {
-  getfavourites,
+  getFavourites,
   createFavourites,
-  updateFavouritesById,
+  updateFavourites,
   deleteFavouritesById,
   deleteAllFavourites,
 } = require("../../controllers/api/favourites");
 
-const router = Router;
+const router = Router();
 
-router.get("/", getfavourites);
+router.get("/", getFavourites);
 router.post("/", createFavourites);
-router.put("/:id", updateFavouritesById);
+router.put("/:id", updateFavourites);
 router.delete("/:id", deleteFavouritesById);
 router.delete("/", deleteAllFavourites);
 
