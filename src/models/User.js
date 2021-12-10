@@ -27,7 +27,7 @@ const schema = {
   },
 };
 
-const option = {
+const options = {
   sequelize: connection,
   timeStamp: true,
   underscored: false,
@@ -36,6 +36,6 @@ const option = {
 
 class User extends Model {}
 
-User.init(schema, option);
+User.init(schema, options);
 
 module.exports = User;
