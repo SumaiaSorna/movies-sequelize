@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const connection = require("../config/connection");
 
 const schema = {
   email: {
@@ -26,7 +27,12 @@ const schema = {
   },
 };
 
-const option = {};
+const option = {
+  sequelize: connection,
+  timeStamp: true,
+  underscored: false,
+  modelName: "user",
+};
 
 class User extends Model {}
 

@@ -1,4 +1,8 @@
+require("dotenv").config;
+
 const express = require("express");
+
+const connection = require("./config/connection");
 
 const routes = require("./routes");
 
@@ -11,6 +15,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-app.listen(PORT, () =>
-  console.log(`server running on http://localhost:${PORT}`)
-);
+const init = async () => {
+  try {
+    await connection.sync({ force: false });
+    app.listen(PORT, () =>
+      console.log(`server running on http://localhost:${PORT}`)
+    );
+  } catch (error) {
+    console.log(`[Error]: Connection to DB failed - ${error.message}`);
+  }
+};
+
+init();
